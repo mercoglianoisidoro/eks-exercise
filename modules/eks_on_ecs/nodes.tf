@@ -47,9 +47,9 @@ resource "aws_eks_node_group" "nodes" {
 
   # let's start by minimal setup - autoscaling should then adapt
   scaling_config {
-    desired_size = 3
-    max_size     = 20
-    min_size     = 2
+    desired_size = var.nodes_desired_size
+    max_size     = var.nodes_max_size
+    min_size     = var.nodes_min_size
   }
 
   instance_types = [var.instance_types]
