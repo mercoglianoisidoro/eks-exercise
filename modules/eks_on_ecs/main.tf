@@ -18,7 +18,8 @@ resource "aws_eks_cluster" "cluster" {
   name     = local.cluster_name
   role_arn = aws_iam_role.cluster_eks_role.arn
   # version                   = "1.20"
-  enabled_cluster_log_types = ["api", "audit", "authenticator", "controllerManager", "scheduler"]
+  enabled_cluster_log_types = []
+  # enabled_cluster_log_types = ["api", "audit", "authenticator", "controllerManager", "scheduler"]
 
   vpc_config {
     subnet_ids              = module.vpc.public_subnets #[module.vpc.public_subnet_1, module.vpc.public_subnet_2]
