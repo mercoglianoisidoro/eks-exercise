@@ -1,0 +1,16 @@
+The application has fixed namespaces.
+
+-------------- WEB UI --------------------
+To connect to the kubernetes dashboard,
+
+1. create a toke:
+kubectl create token eks-admin -n kube-system
+
+2. run the proxy:
+kubectl proxy
+
+3 connect to following link:
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#!/login.
+
+
+-----------------------------------------

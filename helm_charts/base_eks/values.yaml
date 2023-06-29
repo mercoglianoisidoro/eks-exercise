@@ -1,0 +1,19 @@
+
+clusterName: c-eksec2--e-isidoro
+regionName: us-east-1
+
+aws_account_number: TODO
+roleArnForAutoscaler: TODO
+
+# networking
+# hostedZoneId: Z07357022E72HVJZFZRH
+# arnCertificateManager: arn:aws:acm:eu-west-1:204182740575:certificate/6efcb701-e85f-4add-ae8a-1c51f7997082
+# vpcIpCidr: 10.0.0.0/16
+
+# iam
+# roleArnForIngressController: arn:aws:iam::204182740575:role/eks-ec2-devLBControllerRoleEC2
+# roleArnForAutoscaler: arn:aws:iam::204182740575:role/eks-ec2-devAmazonEKSClusterAutoscalerRoleEC2
+
+
+# roleArnForAutoscaler: arn:aws:iam::204182740575:role/role-oidc-8a53bab
+# roleArnForAutoscaler: arn:aws:iam::204182740575:role/eks-ec2-devAmazonEKSClusterAutoscalerRoleEC2ManualTest
