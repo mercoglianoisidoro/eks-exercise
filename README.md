@@ -4,14 +4,17 @@ The repository contains the terraform code to instantiate a EKS cluster and some
 
 ## Repository content: directories
 
-
 - cluster_eks: main directory for terraform code
 - modules: terraform modules
-- helm_chart: some helm chart for testing purposes:
-  - base_eks: it install fluentbit, cloudwatch agent, autoscaler, k8s console
-  - deploy-ubuntu: let to deploy ubuntu executing the script provided
-  - simple-nginx: let to deploy a really simple nginx deployment
+- helm_chart: some helm charts for testing purposes
 
+### helm charts
+
+Some helm charts letting to do some experiments:
+
+- base_eks: it install fluentbit, cloudwatch agent, autoscaler, k8s dashboard
+- deploy-ubuntu: let to deploy ubuntu executing the provided (in configmap) script
+- simple-nginx: let to deploy a really simple nginx deployment
 
 
 ## Terraform module: eks_on_ecs
@@ -19,11 +22,11 @@ The repository contains the terraform code to instantiate a EKS cluster and some
 The module eks_on_ecs let to install EKS using EC2 instances as data plane.
 
 Supported features:
-- autoscaler (it create the needed policies)
+- autoscaler (it create the needed policies) - this need the helm chart base_eks
 - load balancers (it create the needed policies)
-- cloudwatch logs groups used by the fluentbit/cloudwatch agent (in particular it let to set the retentions and to create the needed policies: TODO: policies too open)
-- instantiate the iodc provider (aws_iam_openid_connect_provider resource)
-- policies to let the use IAM for pods
+- cloudwatch logs groups used by the fluentbit/cloudwatch agent (in particular it let to set the retention periods and to create the needed policies: TODO: policies too open) - this need the helm chart base_eks
+- instantiate the iodc provider (aws_iam_openid_connect_provider resource): this let to use AWS IAM to connect to AWS services
+- policies to let the use AWS IAMs by pods
 
 ## How to
 
